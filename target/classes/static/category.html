@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商品分类 - 甜趣奶茶</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* ===== 分类页专属布局 ===== */
+        .category-layout {
+            display: flex;
+            height: calc(100vh - 52px - var(--nav-height) - 10px);
+            /* 减去顶部导航 + 底部导航高度 */
+        }
+
+        /* ---- 左侧分类列表 ---- */
+        .category-sidebar {
+            width: 90px;
+            flex-shrink: 0;
+            background: #FAF5F0;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+        }
+        .category-sidebar .cat-item {
+            padding: 16px 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-gray);
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .category-sidebar .cat-item.active {
+            color: var(--primary);
+            background: var(--white);
+            border-left-color: var(--primary);
+            font-weight: 700;
+        }
+        .category-sidebar .cat-item:hover {
+            color: var(--primary);
+        }
+        .category-sidebar .cat-item .cat-icon {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        /* ---- 右侧商品区 ---- */
+        .category-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+            background: var(--white);
+        }
+        .category-content .cat-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            color: var(--text-dark);
+        }
+        /* 右侧使用单列商品卡片（小卡片横排） */
+        .product-item {
+            display: flex;
+            align-items: center;
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .product-item:hover {
+            transform: translateY(-1px);
+        }
+        .product-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #E8D5C4;
+        }
+        .product-item .pi-info {
+            flex: 1;
+            padding-left: 12px;
+        }
+        .product-item .pi-info h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 4px;
+            color: var(--text-dark);
+        }
+        .product-item .pi-info .pi-desc {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .product-item .pi-info .pi-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .product-item .pi-info .pi-price::before {
+            content: '¥';
+            font-size: 12px;
+        }
+        .product-item .pi-buy {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            line-height: 36px;
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .product-item .pi-buy:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+
+    <!-- ========== 顶部导航栏 ========== -->
+    <div class="top-nav">
+        <div class="brand">
+            <i class="fa fa-leaf"></i>商品分类
+        </div>
+        <div class="nav-right">
+            <a href="profile.html"><i class="fa fa-user-circle-o"></i></a>
+        </div>
+    </div>
+
+    <!-- ========== 分类主体：左列表 + 右商品 ========== -->
+    <div class="category-layout">
+        <!-- 左侧分类列表（由 JS 渲染） -->
+        <div class="category-sidebar" id="categorySidebar">
+            <div class="cat-item active" data-id="0">
+                <span class="cat-icon"><i class="fa fa-star"></i></span>
+                全部
+            </div>
+            <!-- 动态分类项由 JS 追加 -->
+        </div>
+
+        <!-- 右侧商品列表 -->
+        <div class="category-content" id="categoryContent">
+            <div class="empty-state">
+                <i class="fa fa-spinner fa-spin"></i>
+                <p>正在加载商品…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 底部公共导航栏 ========== -->
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="location.href='index.html'">
+            <i class="fa fa-home"></i>
+            <span>首页</span>
+        </div>
+        <div class="nav-item active" onclick="location.href='category.html'">
+            <i class="fa fa-th-large"></i>
+            <span>分类</span>
+        </div>
+        <div class="nav-item" onclick="location.href='list.html'">
+            <i class="fa fa-compass"></i>
+            <span>全部</span>
+        </div>
+        <div class="nav-item" onclick="location.href='profile.html'">
+            <i class="fa fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+</div><!-- /.page-container -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>
