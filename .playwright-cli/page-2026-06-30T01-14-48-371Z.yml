@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: 
+        - text: 甜趣奶茶
+      - navigation [ref=e6]:
+        - link " 首页" [ref=e7] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e8]: 
+          - text: 首页
+        - link " 分类" [ref=e9] [cursor=pointer]:
+          - /url: category.html
+          - generic [ref=e10]: 
+          - text: 分类
+        - link " 全部商品" [ref=e11] [cursor=pointer]:
+          - /url: list.html
+          - generic [ref=e12]: 
+          - text: 全部商品
+        - link " 个人中心" [ref=e13] [cursor=pointer]:
+          - /url: profile.html
+          - generic [ref=e14]: 
+          - text: 个人中心
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: profile.html
+        - generic [ref=e17]: 
+  - generic [ref=e19]:
+    - img "商品图片" [ref=e21]
+    - generic [ref=e22]:
+      - heading "---" [level=2] [ref=e23]
+      - paragraph [ref=e24]: "---"
+      - generic [ref=e25]:
+        - generic [ref=e26]: ¥0.00
+        - generic [ref=e27]: 库存：0
+      - generic [ref=e28]:
+        - heading " 甜度" [level=4] [ref=e29]:
+          - generic [ref=e30]: 
+          - text: 甜度
+        - generic [ref=e31]:
+          - generic [ref=e32] [cursor=pointer]: 全糖
+          - generic [ref=e33] [cursor=pointer]: 半糖
+          - generic [ref=e34] [cursor=pointer]: 无糖
+      - generic [ref=e35]:
+        - heading " 冰量" [level=4] [ref=e36]:
+          - generic [ref=e37]: 
+          - text: 冰量
+        - generic [ref=e38]:
+          - generic [ref=e39] [cursor=pointer]: 正常
+          - generic [ref=e40] [cursor=pointer]: 少冰
+          - generic [ref=e41] [cursor=pointer]: 去冰
+      - generic [ref=e42]:
+        - generic [ref=e43]: 数量
+        - generic [ref=e44]:
+          - button "" [disabled] [ref=e45]:
+            - generic [ref=e46]: 
+          - generic [ref=e47]: "1"
+          - button "" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]: 
+      - generic [ref=e50]:
+        - generic [ref=e51]: 合计 ¥0.00
+        - button "立即下单" [ref=e52] [cursor=pointer]

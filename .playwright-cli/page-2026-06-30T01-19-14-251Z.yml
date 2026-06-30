@@ -1,0 +1,118 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: 
+        - text: 甜趣奶茶
+      - navigation [ref=e6]:
+        - link " 首页" [ref=e7] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e8]: 
+          - text: 首页
+        - link " 分类" [ref=e9] [cursor=pointer]:
+          - /url: category.html
+          - generic [ref=e10]: 
+          - text: 分类
+        - link " 全部商品" [ref=e11] [cursor=pointer]:
+          - /url: list.html
+          - generic [ref=e12]: 
+          - text: 全部商品
+        - link " 个人中心" [ref=e13] [cursor=pointer]:
+          - /url: profile.html
+          - generic [ref=e14]: 
+          - text: 个人中心
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: profile.html
+        - generic [ref=e17]: 
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - list [ref=e20]:
+        - listitem [ref=e21] [cursor=pointer]
+        - listitem [ref=e22] [cursor=pointer]
+        - listitem [ref=e23] [cursor=pointer]
+      - listbox [ref=e24]:
+        - generic [ref=e27]:
+          - heading "🌿 夏日新品上市" [level=2] [ref=e28]
+          - paragraph [ref=e29]: 满杯百香果 · 清凉一夏
+    - generic [ref=e30]:
+      - heading "全部分类" [level=3] [ref=e31]
+      - link "查看全部 " [ref=e32] [cursor=pointer]:
+        - /url: category.html
+        - text: 查看全部
+        - generic [ref=e33]: 
+    - generic [ref=e34]:
+      - generic [ref=e35] [cursor=pointer]:
+        - generic [ref=e37]: 
+        - generic [ref=e38]: 果茶
+      - generic [ref=e39] [cursor=pointer]:
+        - generic [ref=e41]: 
+        - generic [ref=e42]: 奶茶
+      - generic [ref=e43] [cursor=pointer]:
+        - generic [ref=e45]: 
+        - generic [ref=e46]: 咖啡
+      - generic [ref=e47] [cursor=pointer]:
+        - generic [ref=e49]: 
+        - generic [ref=e50]: 小食
+    - generic [ref=e51]:
+      - heading " 热门推荐" [level=3] [ref=e52]:
+        - generic [ref=e53]: 
+        - text: 热门推荐
+      - link "更多 " [ref=e54] [cursor=pointer]:
+        - /url: list.html
+        - text: 更多
+        - generic [ref=e55]: 
+    - generic [ref=e56]:
+      - generic [ref=e57] [cursor=pointer]:
+        - img "拿铁咖啡" [ref=e58]
+        - generic [ref=e59]:
+          - heading "拿铁咖啡" [level=4] [ref=e60]
+          - paragraph [ref=e61]: 意式浓缩+醇香牛奶，丝滑顺口
+          - generic [ref=e62]: ¥ 18.00
+      - generic [ref=e63] [cursor=pointer]:
+        - img "经典美式" [ref=e64]
+        - generic [ref=e65]:
+          - heading "经典美式" [level=4] [ref=e66]
+          - paragraph [ref=e67]: 精选阿拉比卡豆，纯正美式风味
+          - generic [ref=e68]: ¥ 15.00
+      - generic [ref=e69] [cursor=pointer]:
+        - img "芋泥波波奶茶" [ref=e70]
+        - generic [ref=e71]:
+          - heading "芋泥波波奶茶" [level=4] [ref=e72]
+          - paragraph [ref=e73]: 绵密芋泥+黑糖波波，冬日暖饮首选
+          - generic [ref=e74]: ¥ 18.00
+      - generic [ref=e75] [cursor=pointer]:
+        - img "红豆奶茶" [ref=e76]
+        - generic [ref=e77]:
+          - heading "红豆奶茶" [level=4] [ref=e78]
+          - paragraph [ref=e79]: 软糯红豆搭配浓郁奶茶
+          - generic [ref=e80]: ¥ 15.00
+      - generic [ref=e81] [cursor=pointer]:
+        - img "珍珠奶茶" [ref=e82]
+        - generic [ref=e83]:
+          - heading "珍珠奶茶" [level=4] [ref=e84]
+          - paragraph [ref=e85]: 经典台式珍珠奶茶，Q弹有嚼劲
+          - generic [ref=e86]: ¥ 14.00
+      - generic [ref=e87] [cursor=pointer]:
+        - img "杨枝甘露" [ref=e88]
+        - generic [ref=e89]:
+          - heading "杨枝甘露" [level=4] [ref=e90]
+          - paragraph [ref=e91]: 经典港式甜品，芒果椰奶西柚粒
+          - generic [ref=e92]: ¥ 20.00
+      - generic [ref=e93] [cursor=pointer]:
+        - img "葡萄冻冻" [ref=e94]
+        - generic [ref=e95]:
+          - heading "葡萄冻冻" [level=4] [ref=e96]
+          - paragraph [ref=e97]: 手剥葡萄果肉，Q弹果冻打底
+          - generic [ref=e98]: ¥ 19.00
+      - generic [ref=e99] [cursor=pointer]:
+        - img "霸气橙子" [ref=e100]
+        - generic [ref=e101]:
+          - heading "霸气橙子" [level=4] [ref=e102]
+          - paragraph [ref=e103]: 整颗鲜橙切片，满口维C果汁
+          - generic [ref=e104]: ¥ 18.00
+      - generic [ref=e105] [cursor=pointer]:
+        - img "满杯百香果" [ref=e106]
+        - generic [ref=e107]:
+          - heading "满杯百香果" [level=4] [ref=e108]
+          - paragraph [ref=e109]: 新鲜百香果搭配茉莉绿茶，酸甜清爽
+          - generic [ref=e110]: ¥ 16.00

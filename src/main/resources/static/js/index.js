@@ -1,70 +1,53 @@
 /**
- * 甜趣奶茶点单系统 - 首页逻辑
- * 模块1：首页统筹（组长任务）
+ * 甜趣奶茶 - 首页逻辑
  */
-$(function () {
+$(function(){
 
-    // ========== 加载推荐商品 ==========
-    function loadRecommend() {
-        $.ajax({
-            url: '/api/index/recommend',
-            type: 'GET',
-            dataType: 'json',
-            success: function (res) {
-                if (res.code === 200 && res.data && res.data.length > 0) {
-                    renderRecommend(res.data);
-                } else {
-                    $('#recommendList').html(
-                        '<div class="empty-state">' +
-                        '<i class="fa fa-inbox"></i>' +
-                        '<p>暂无推荐商品</p>' +
-                        '</div>'
-                    );
-                }
-            },
-            error: function () {
-                $('#recommendList').html(
-                    '<div class="empty-state">' +
-                    '<i class="fa fa-exclamation-triangle"></i>' +
-                    '<p>加载失败，请检查网络</p>' +
-                    '</div>'
-                );
-            }
-        });
-    }
+  var hotEmojis = ['🧋','🍵','🥤','🧊','🍋','🫧','🍑','🍇','☕'];
 
-    // ========== 渲染推荐商品列表 ==========
-    function renderRecommend(products) {
-        var $container = $('#recommendList');
-        $container.empty();
+  function loadRecommend(){
+    $.ajax({
+      url:'/api/index/recommend',type:'GET',dataType:'json',
+      success:function(res){
+        if(res.code===200&&res.data&&res.data.length>0) renderRecommend(res.data);
+        else $('#recommendGrid').html('<div class="empty-state"><div class="es-icon">📭</div><p>暂无推荐商品</p></div>');
+      },
+      error:function(){
+        $('#recommendGrid').html('<div class="empty-state"><div class="es-icon">⚠️</div><p>加载失败，请检查网络</p></div>');
+      }
+    });
+  }
 
-        $.each(products, function (i, product) {
-            // 如果没有真实图片，使用带背景色的占位图
-            var imgSrc = product.imageUrl || '';
-            var cardHtml =
-                '<div class="recommend-card" onclick="location.href=\'detail.html?id=' + product.id + '\'">' +
-                    '<img class="card-img" src="' + imgSrc + '" ' +
-                        'onerror="this.style.background=\'linear-gradient(135deg, #FFB563, #FF8C5A)\';' +
-                        'this.style.display=\'block\';" ' +
-                        'alt="' + product.name + '">' +
-                    '<div class="card-info">' +
-                        '<h4>' + escapeHtml(product.name) + '</h4>' +
-                        '<p class="desc">' + escapeHtml(product.description || '') + '</p>' +
-                        '<span class="price">' + product.price.toFixed(2) + '</span>' +
-                    '</div>' +
-                    '<i class="fa fa-chevron-right" style="color:#ccc;font-size:14px;"></i>' +
-                '</div>';
-            $container.append(cardHtml);
-        });
-    }
+  function renderRecommend(products){
+    var $g = $('#recommendGrid');$g.empty();
+    $.each(products,function(i,p){
+      var emoji = hotEmojis[i%hotEmojis.length];
+      var img = p.imageUrl||'';
+      $g.append(
+        '<div class="product-card" onclick="location.href=\'detail.html?id='+p.id+'\'">'+
+          '<div class="pc-img-wrap">'+
+            '<img src="'+img+'" onerror="this.style.display=\'none\';this.parentElement.innerHTML=\'<div style=width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:64px>'+emoji+'</div>\'" alt="'+esc(p.name)+'">'+
+            '<span class="pc-badge pc-badge-hot">HOT</span>'+
+          '</div>'+
+          '<div class="pc-body">'+
+            '<div class="pc-name">'+esc(p.name)+'</div>'+
+            '<div class="pc-desc">'+esc(p.description||'')+'</div>'+
+            '<div class="pc-footer">'+
+              '<div class="pc-price"><span class="symbol">¥</span>'+p.price.toFixed(2)+'</div>'+
+              '<button class="pc-btn" onclick="event.stopPropagation();location.href=\'detail.html?id='+p.id+'\'">去下单</button>'+
+            '</div>'+
+          '</div>'+
+        '</div>'
+      );
+    });
+  }
 
-    // ========== 简单 XSS 防护 ==========
-    function escapeHtml(str) {
-        var div = document.createElement('div');
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-    }
+  function esc(s){var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML}
 
-    // ========== 页面加载时执行 ==========
-    loadRecommend();
+  // sticky header shadow
+  $(window).on('scroll',function(){
+    $('#mainHeader').toggleClass('scrolled',$(window).scrollTop()>10);
+  });
+
+  loadRecommend();
 });

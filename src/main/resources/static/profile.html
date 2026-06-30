@@ -1,300 +1,82 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>个人中心 - 甜趣奶茶</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/common.css">
-    <style>
-        /* 用户信息头部 */
-        .profile-header {
-            background: linear-gradient(135deg, #FF6B35, #FFB563);
-            padding: 32px 20px 28px;
-            color: #fff;
-            text-align: center;
-        }
-        .profile-header .avatar {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.25);
-            margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-        }
-        .profile-header h3 {
-            margin: 0 0 2px;
-            font-weight: 600;
-            font-size: 20px;
-        }
-        .profile-header .addr {
-            font-size: 12px;
-            opacity: 0.85;
-            margin-top: 4px;
-        }
-
-        /* 功能列表 */
-        .profile-menu {
-            margin: 12px 16px;
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .profile-menu .menu-item {
-            display: flex;
-            align-items: center;
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-            transition: background 0.15s;
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-        .profile-menu .menu-item:last-child {
-            border-bottom: none;
-        }
-        .profile-menu .menu-item:hover {
-            background: var(--bg-light);
-        }
-        .profile-menu .menu-item .menu-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 14px;
-            font-size: 18px;
-            color: #fff;
-            flex-shrink: 0;
-        }
-        .icon-bg-1 { background: #FFB563; }
-        .icon-bg-2 { background: #6BB5FF; }
-        .icon-bg-3 { background: #E57373; }
-        .icon-bg-4 { background: #81C784; }
-        .profile-menu .menu-item .menu-text {
-            flex: 1;
-        }
-        .profile-menu .menu-item .menu-text .menu-title {
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .profile-menu .menu-item .menu-text .menu-sub {
-            font-size: 12px;
-            color: var(--text-gray);
-        }
-
-        /* 订单列表 */
-        .order-section {
-            margin: 12px 16px;
-        }
-        .order-section .os-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-        .order-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 10px;
-            box-shadow: var(--shadow);
-        }
-        .order-card .oc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 12px;
-            color: var(--text-gray);
-        }
-        .order-card .oc-header .oc-status {
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        .status-pending { background: #FFF3E0; color: #E65100; }
-        .status-done { background: #E8F5E9; color: #2E7D32; }
-        .status-cancel { background: #F5F5F5; color: #757575; }
-        .order-card .oc-items {
-            border-top: 1px solid var(--border);
-            padding-top: 8px;
-        }
-        .order-card .oc-item {
-            display: flex;
-            align-items: center;
-            padding: 6px 0;
-            font-size: 13px;
-        }
-        .order-card .oc-item img {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin-right: 10px;
-            flex-shrink: 0;
-            background: #F5E6D8;
-        }
-        .order-card .oc-item .oci-name {
-            flex: 1;
-            font-weight: 500;
-        }
-        .order-card .oc-item .oci-spec {
-            font-size: 11px;
-            color: var(--text-gray);
-        }
-        .order-card .oc-item .oci-qty {
-            color: var(--text-gray);
-            margin-right: 8px;
-        }
-        .order-card .oc-item .oci-subtotal {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .order-card .oc-item .oci-subtotal::before {
-            content: '¥';
-            font-size: 11px;
-        }
-        .order-card .oc-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border);
-            padding-top: 8px;
-            margin-top: 4px;
-            font-size: 13px;
-        }
-        .order-card .oc-footer .oc-total-label {
-            color: var(--text-gray);
-        }
-        .order-card .oc-footer .oc-total-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .order-card .oc-footer .oc-total-price::before {
-            content: '¥';
-            font-size: 13px;
-        }
-
-        /* 退出登录按钮 */
-        .btn-logout-row {
-            text-align: center;
-            padding: 20px 16px 40px;
-        }
-        .btn-logout {
-            padding: 10px 40px;
-            border-radius: 24px;
-            border: 1.5px solid #E57373;
-            background: transparent;
-            color: #E57373;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .btn-logout:hover {
-            background: #E57373;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>个人中心 - 甜趣奶茶</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+
+<header class="desktop-header" id="mainHeader">
+  <div class="header-inner">
+    <a href="index.html" class="header-brand">
+      <div class="brand-icon"><i class="fa fa-leaf"></i></div>甜趣奶茶
+    </a>
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">首页</a>
+      <a class="nav-link" href="category.html">分类浏览</a>
+      <a class="nav-link" href="list.html">全部商品</a>
+      <a class="nav-link active" href="profile.html">个人中心</a>
+    </nav>
+    <a href="profile.html" class="header-user-btn"><i class="fa fa-user-o"></i></a>
+  </div>
+</header>
+
 <div class="page-container">
+  <div class="profile-layout">
 
-    <!-- ========== 顶部导航 ========== -->
-    <div class="top-nav">
-        <div class="brand">
-            <i class="fa fa-leaf"></i>个人中心
-        </div>
-        <div class="nav-right">
-            <!-- 无额外按钮 -->
-        </div>
-    </div>
-
-    <!-- ========== 用户信息卡片 ========== -->
-    <div class="profile-header" id="profileHeader">
-        <div class="avatar">
-            <i class="fa fa-user-o"></i>
-        </div>
+    <!-- 左侧信息 -->
+    <div class="profile-sidebar">
+      <div class="profile-avatar-area">
+        <div class="pa-circle"><i class="fa fa-user-o"></i></div>
         <h3 id="profileName">未登录</h3>
-        <p style="margin:0;font-size:13px;opacity:0.8;" id="profileUsername"></p>
-        <p class="addr" id="profileAddr"></p>
-    </div>
+        <div class="pa-uid" id="profileUsername"></div>
+        <div class="pa-addr" id="profileAddr"></div>
+      </div>
 
-    <!-- ========== 功能菜单（未登录时隐藏） ========== -->
-    <div class="profile-menu" id="profileMenu" style="display:none;">
-        <a class="menu-item" href="list.html">
-            <div class="menu-icon icon-bg-1"><i class="fa fa-search"></i></div>
-            <div class="menu-text">
-                <div class="menu-title">浏览商品</div>
-                <div class="menu-sub">查看全部饮品和小食</div>
-            </div>
-            <i class="fa fa-chevron-right" style="color:#ccc;"></i>
-        </a>
-        <div class="menu-item" onclick="location.href='index.html'">
-            <div class="menu-icon icon-bg-4"><i class="fa fa-home"></i></div>
-            <div class="menu-text">
-                <div class="menu-title">返回首页</div>
-                <div class="menu-sub">查看推荐和分类</div>
-            </div>
-            <i class="fa fa-chevron-right" style="color:#ccc;"></i>
+      <!-- 未登录 -->
+      <div id="loginPrompt" style="text-align:center;padding:12px 0">
+        <p style="color:var(--color-text-muted);margin-bottom:14px;font-size:14px">登录后查看订单和收货地址</p>
+        <button class="btn-primary-lg" onclick="location.href='login.html'" style="width:100%">立即登录</button>
+      </div>
+
+      <!-- 菜单 -->
+      <div class="profile-menu-box" id="profileMenu" style="display:none">
+        <div class="pm-item" onclick="location.href='list.html'">
+          <div class="pm-icon" style="background:var(--color-accent)"><i class="fa fa-search"></i></div>
+          <span>浏览商品</span>
+          <i class="fa fa-chevron-right" style="color:var(--color-text-muted);margin-left:auto"></i>
         </div>
-    </div>
+        <div class="pm-item" onclick="location.href='index.html'">
+          <div class="pm-icon" style="background:var(--color-primary)"><i class="fa fa-home"></i></div>
+          <span>返回首页</span>
+          <i class="fa fa-chevron-right" style="color:var(--color-text-muted);margin-left:auto"></i>
+        </div>
+      </div>
 
-    <!-- ========== 登录按钮（未登录时显示） ========== -->
-    <div style="text-align:center;padding:30px 0;" id="loginPrompt">
-        <p style="color:var(--text-gray);margin-bottom:16px;">登录后查看订单和收货地址</p>
-        <button class="btn-primary-custom" onclick="location.href='login.html'">
-            <i class="fa fa-sign-in"></i> 立即登录
+      <!-- 退出 -->
+      <div class="mt-auto text-center" id="logoutRow" style="display:none;padding-top:16px">
+        <button class="btn-outline-lg" id="btnLogout" style="border-color:#DC2626;color:#DC2626">
+          <i class="fa fa-sign-out"></i> 退出登录
         </button>
+      </div>
     </div>
 
-    <!-- ========== 我的订单（已登录时显示） ========== -->
-    <div class="order-section" id="orderSection" style="display:none;">
-        <div class="os-title"><i class="fa fa-file-text-o" style="color:var(--primary);"></i> 我的订单</div>
-        <div id="orderList">
-            <div class="empty-state">
-                <i class="fa fa-spinner fa-spin"></i>
-                <p>正在加载订单…</p>
-            </div>
-        </div>
+    <!-- 右侧订单 -->
+    <div class="profile-main">
+      <div class="pm-title" id="orderSection" style="display:none">📋 我的订单</div>
+      <div class="order-card-list" id="orderList"></div>
+      <div id="orderEmptyHint" style="text-align:center;padding:80px 20px;color:var(--color-text-muted)">
+        <div style="font-size:64px;margin-bottom:16px;opacity:.3">📭</div>
+        <p style="font-size:15px">登录后可查看您的历史订单</p>
+      </div>
     </div>
 
-    <!-- ========== 退出登录 ========== -->
-    <div class="btn-logout-row" id="logoutRow" style="display:none;">
-        <button class="btn-logout" id="btnLogout">
-            <i class="fa fa-sign-out"></i> 退出登录
-        </button>
-    </div>
-
-    <!-- ========== 底部导航 ========== -->
-    <div class="bottom-nav">
-        <div class="nav-item" onclick="location.href='index.html'">
-            <i class="fa fa-home"></i>
-            <span>首页</span>
-        </div>
-        <div class="nav-item" onclick="location.href='category.html'">
-            <i class="fa fa-th-large"></i>
-            <span>分类</span>
-        </div>
-        <div class="nav-item" onclick="location.href='list.html'">
-            <i class="fa fa-compass"></i>
-            <span>全部</span>
-        </div>
-        <div class="nav-item active" onclick="location.href='profile.html'">
-            <i class="fa fa-user"></i>
-            <span>我的</span>
-        </div>
-    </div>
-
-</div><!-- /.page-container -->
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script src="js/profile.js"></script>

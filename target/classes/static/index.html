@@ -1,133 +1,107 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>甜趣奶茶 - 首页</title>
-    <!-- Bootstrap 3 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
-    <!-- Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <!-- 全局公共样式 -->
-    <link rel="stylesheet" href="css/common.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>甜趣奶茶 - 每一杯都是甜蜜的邂逅</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+
+<!-- ====== Header ====== -->
+<header class="desktop-header" id="mainHeader">
+  <div class="header-inner">
+    <a href="index.html" class="header-brand">
+      <div class="brand-icon"><i class="fa fa-leaf"></i></div>
+      甜趣奶茶
+    </a>
+    <nav class="header-nav">
+      <a class="nav-link active" href="index.html">首页</a>
+      <a class="nav-link" href="category.html">分类浏览</a>
+      <a class="nav-link" href="list.html">全部商品</a>
+      <a class="nav-link" href="profile.html">个人中心</a>
+    </nav>
+    <a href="profile.html" class="header-user-btn"><i class="fa fa-user-o"></i></a>
+  </div>
+</header>
+
 <div class="page-container">
 
-    <!-- ========== 顶部导航栏 ========== -->
-    <div class="top-nav">
-        <div class="brand">
-            <i class="fa fa-leaf"></i>甜趣奶茶
-        </div>
-        <div class="nav-right">
-            <a href="profile.html" title="个人中心"><i class="fa fa-user-circle-o"></i></a>
-        </div>
+  <!-- ====== Hero ====== -->
+  <section class="hero-banner">
+    <div class="hero-deco-2"></div>
+    <div class="hero-text">
+      <div class="hero-badge">✨ 夏日特供 · 新品上市</div>
+      <h1>每一杯，<br>都是<span class="highlight">甜蜜</span>的邂逅</h1>
+      <p>精选当季鲜果，手工现调，让每一口都充满惊喜。新用户首单立享 ¥5 优惠。</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="location.href='list.html'">探索全部饮品</button>
+        <button class="btn-hero-outline" onclick="location.href='category.html?cid=1'">果茶系列</button>
+      </div>
     </div>
+    <div class="hero-visual">
+      <div class="hero-float-card">
+        <div class="fc-emoji">🧋</div>
+        <div class="fc-title">招牌珍珠奶茶</div>
+        <div class="fc-price"><small>¥</small>14</div>
+      </div>
+      <div class="hero-float-card-2">
+        <div class="fc2-row">
+          <div class="fc2-dot"></div>
+          <span class="fc2-text">今日已售 237 杯</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ========== 轮播图 ========== -->
-    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-        <!-- 指示器 -->
-        <ol class="carousel-indicators">
-            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#homeCarousel" data-slide-to="1"></li>
-            <li data-target="#homeCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- 轮播内容（使用占位背景色模拟图片） -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div style="height:220px; background:linear-gradient(135deg, #FF6B35, #FFB563);
-                            display:flex;align-items:center;justify-content:center;color:#fff;">
-                    <div style="text-align:center;">
-                        <h2 style="margin:0;font-weight:700;">夏日新品上市</h2>
-                        <p style="margin:8px 0 0;font-size:15px;">满杯百香果 · 清凉一夏</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div style="height:220px; background:linear-gradient(135deg, #C19A6B, #E8C99B);
-                            display:flex;align-items:center;justify-content:center;color:#fff;">
-                    <div style="text-align:center;">
-                        <h2 style="margin:0;font-weight:700;">芋泥波波回归</h2>
-                        <p style="margin:8px 0 0;font-size:15px;">绵密芋泥 · 暖心之选</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div style="height:220px; background:linear-gradient(135deg, #6F4E37, #A0522D);
-                            display:flex;align-items:center;justify-content:center;color:#fff;">
-                    <div style="text-align:center;">
-                        <h2 style="margin:0;font-weight:700;">新用户首单立减</h2>
-                        <p style="margin:8px 0 0;font-size:15px;">注册即享 ¥5 优惠券</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ====== 分类导航 ====== -->
+  <div class="section-head">
+    <div class="sh-label">Categories</div>
+    <h2>探索你喜爱的口味</h2>
+    <p>从清爽果茶到浓香奶茶，总有一杯适合你</p>
+  </div>
+  <div class="category-pills">
+    <div class="cat-pill" onclick="location.href='category.html?cid=1'">
+      <div class="cp-icon cp-1"><i class="fa fa-lemon-o"></i></div> 果茶
     </div>
+    <div class="cat-pill" onclick="location.href='category.html?cid=2'">
+      <div class="cp-icon cp-2"><i class="fa fa-coffee"></i></div> 奶茶
+    </div>
+    <div class="cat-pill" onclick="location.href='category.html?cid=3'">
+      <div class="cp-icon cp-3"><i class="fa fa-moon-o"></i></div> 咖啡
+    </div>
+    <div class="cat-pill" onclick="location.href='category.html?cid=4'">
+      <div class="cp-icon cp-4"><i class="fa fa-cutlery"></i></div> 小食
+    </div>
+  </div>
 
-    <!-- ========== 分类导航图标 ========== -->
-    <div class="section-title">
-        <h3>全部分类</h3>
-        <a href="category.html" class="more">查看全部 <i class="fa fa-angle-right"></i></a>
+  <!-- ====== 热门推荐 ====== -->
+  <div class="section-title-bar">
+    <h3>🔥 热门推荐</h3>
+    <a href="list.html" class="more-link">查看全部 <i class="fa fa-arrow-right"></i></a>
+  </div>
+  <div class="product-grid-4" id="recommendGrid">
+    <div class="empty-state">
+      <div class="es-icon">☕</div>
+      <p>正在加载推荐…</p>
     </div>
-    <div class="category-icons">
-        <div class="category-icon-item" onclick="location.href='category.html?cid=1'">
-            <div class="icon-circle icon-1"><i class="fa fa-lemon-o"></i></div>
-            <span>果茶</span>
-        </div>
-        <div class="category-icon-item" onclick="location.href='category.html?cid=2'">
-            <div class="icon-circle icon-2"><i class="fa fa-coffee"></i></div>
-            <span>奶茶</span>
-        </div>
-        <div class="category-icon-item" onclick="location.href='category.html?cid=3'">
-            <div class="icon-circle icon-3"><i class="fa fa-moon-o"></i></div>
-            <span>咖啡</span>
-        </div>
-        <div class="category-icon-item" onclick="location.href='category.html?cid=4'">
-            <div class="icon-circle icon-4"><i class="fa fa-cutlery"></i></div>
-            <span>小食</span>
-        </div>
-    </div>
+  </div>
 
-    <!-- ========== 热门推荐区 ========== -->
-    <div class="section-title">
-        <h3><i class="fa fa-diamond" style="color:#FF6B35;"></i> 热门推荐</h3>
-        <a href="list.html" class="more">更多 <i class="fa fa-angle-right"></i></a>
+  <!-- ====== CTA Banner ====== -->
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h3>🎁 新用户首单立减 ¥5</h3>
+      <p>注册即可领取，全场饮品通用</p>
     </div>
-    <div class="recommend-list" id="recommendList">
-        <!-- 由 JS 动态渲染 -->
-        <div class="empty-state">
-            <i class="fa fa-spinner fa-spin"></i>
-            <p>正在加载推荐…</p>
-        </div>
-    </div>
+    <button class="cta-btn" onclick="location.href='login.html'">立即领取</button>
+  </div>
 
-    <!-- ========== 底部公共导航栏 ========== -->
-    <div class="bottom-nav">
-        <div class="nav-item active" onclick="location.href='index.html'">
-            <i class="fa fa-home"></i>
-            <span>首页</span>
-        </div>
-        <div class="nav-item" onclick="location.href='category.html'">
-            <i class="fa fa-th-large"></i>
-            <span>分类</span>
-        </div>
-        <div class="nav-item" onclick="location.href='list.html'">
-            <i class="fa fa-compass"></i>
-            <span>全部</span>
-        </div>
-        <div class="nav-item" onclick="location.href='profile.html'">
-            <i class="fa fa-user"></i>
-            <span>我的</span>
-        </div>
-    </div>
+</div>
 
-</div><!-- /.page-container -->
-
-<!-- jQuery (Bootstrap 依赖) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<!-- Bootstrap 3 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
-<!-- 首页逻辑 -->
 <script src="js/index.js"></script>
 </body>
 </html>

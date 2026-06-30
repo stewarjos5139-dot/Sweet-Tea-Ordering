@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link " 甜趣奶茶" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e6]: 
+        - text: 甜趣奶茶
+      - navigation [ref=e7]:
+        - link "首页" [ref=e8] [cursor=pointer]:
+          - /url: index.html
+        - link "分类浏览" [ref=e9] [cursor=pointer]:
+          - /url: category.html
+        - link "全部商品" [ref=e10] [cursor=pointer]:
+          - /url: list.html
+        - link "个人中心" [ref=e11] [cursor=pointer]:
+          - /url: profile.html
+      - link "" [ref=e12] [cursor=pointer]:
+        - /url: profile.html
+        - generic [ref=e13]: 
+  - generic [ref=e15]:
+    - generic [ref=e17]: 🧋
+    - generic [ref=e18]:
+      - generic [ref=e19]: 饮品
+      - heading "---" [level=1] [ref=e20]
+      - paragraph [ref=e21]: "---"
+      - generic [ref=e22]: ¥0
+      - generic [ref=e23]: 库存：0 杯
+      - generic [ref=e24]:
+        - generic [ref=e25]: 🍯 甜度
+        - generic [ref=e26]:
+          - generic [ref=e27] [cursor=pointer]: 全糖
+          - generic [ref=e28] [cursor=pointer]: 半糖
+          - generic [ref=e29] [cursor=pointer]: 无糖
+      - generic [ref=e30]:
+        - generic [ref=e31]: 🧊 冰量
+        - generic [ref=e32]:
+          - generic [ref=e33] [cursor=pointer]: 正常
+          - generic [ref=e34] [cursor=pointer]: 少冰
+          - generic [ref=e35] [cursor=pointer]: 去冰
+      - generic [ref=e36]:
+        - generic [ref=e37]: 📦 数量
+        - generic [ref=e38]:
+          - button "" [disabled] [ref=e39]:
+            - generic [ref=e40]: 
+          - generic [ref=e41]: "1"
+          - button "" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: 
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: 合计金额
+          - generic [ref=e47]: ¥0.00
+        - button "立即下单" [ref=e48] [cursor=pointer]

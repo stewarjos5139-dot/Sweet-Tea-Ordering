@@ -1,0 +1,25 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]: 
+    - heading "甜趣奶茶" [level=1] [ref=e6]
+    - paragraph [ref=e7]: 每一杯都是甜蜜的邂逅
+  - generic [ref=e8]:
+    - heading "欢迎回来" [level=2] [ref=e9]
+    - paragraph [ref=e10]: 登录后享受更多优惠
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e14]: 
+        - textbox "请输入用户名" [ref=e15]
+      - generic [ref=e16]:
+        - generic [ref=e18]: 
+        - textbox "请输入密码" [ref=e19]
+      - button "登 录" [ref=e20] [cursor=pointer]
+    - paragraph [ref=e21]:
+      - text: 测试账号：
+      - code [ref=e22]: testuser
+      - text: 密码：
+      - code [ref=e23]: "123456"
+    - link " 返回首页" [ref=e24] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e25]: 
+      - text: 返回首页

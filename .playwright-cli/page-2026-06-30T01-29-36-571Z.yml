@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link " 甜趣奶茶" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e6]: 
+        - text: 甜趣奶茶
+      - navigation [ref=e7]:
+        - link "首页" [ref=e8] [cursor=pointer]:
+          - /url: index.html
+        - link "分类浏览" [ref=e9] [cursor=pointer]:
+          - /url: category.html
+        - link "全部商品" [ref=e10] [cursor=pointer]:
+          - /url: list.html
+        - link "个人中心" [ref=e11] [cursor=pointer]:
+          - /url: profile.html
+      - link "" [ref=e12] [cursor=pointer]:
+        - /url: profile.html
+        - generic [ref=e13]: 
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: ✨ 夏日特供 · 新品上市
+        - heading "每一杯， 都是甜蜜的邂逅" [level=1] [ref=e18]:
+          - text: 每一杯，
+          - text: 都是甜蜜的邂逅
+        - paragraph [ref=e19]: 精选当季鲜果，手工现调，让每一口都充满惊喜。新用户首单立享 ¥5 优惠。
+        - generic [ref=e20]:
+          - button "探索全部饮品" [ref=e21] [cursor=pointer]
+          - button "果茶系列" [ref=e22] [cursor=pointer]
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: 🧋
+          - generic [ref=e26]: 招牌珍珠奶茶
+          - generic [ref=e27]: ¥14
+        - generic [ref=e31]: 今日已售 237 杯
+    - generic [ref=e32]:
+      - generic [ref=e33]: Categories
+      - heading "探索你喜爱的口味" [level=2] [ref=e34]
+      - paragraph [ref=e35]: 从清爽果茶到浓香奶茶，总有一杯适合你
+    - generic [ref=e36]:
+      - generic [ref=e37] [cursor=pointer]:
+        - generic [ref=e39]: 
+        - text: 果茶
+      - generic [ref=e40] [cursor=pointer]:
+        - generic [ref=e42]: 
+        - text: 奶茶
+      - generic [ref=e43] [cursor=pointer]:
+        - generic [ref=e45]: 
+        - text: 咖啡
+      - generic [ref=e46] [cursor=pointer]:
+        - generic [ref=e48]: 
+        - text: 小食
+    - generic [ref=e49]:
+      - heading "🔥 热门推荐" [level=3] [ref=e50]
+      - link "查看全部 " [ref=e51] [cursor=pointer]:
+        - /url: list.html
+        - text: 查看全部
+        - generic [ref=e52]: 
+    - generic [ref=e53]:
+      - generic [ref=e54] [cursor=pointer]:
+        - generic [ref=e56]: 🧋
+        - generic [ref=e57]:
+          - generic [ref=e58]: 拿铁咖啡
+          - generic [ref=e59]: 意式浓缩+醇香牛奶，丝滑顺口
+          - generic [ref=e60]:
+            - generic [ref=e61]: ¥18.00
+            - button "去下单" [ref=e62]
+      - generic [ref=e63] [cursor=pointer]:
+        - generic [ref=e65]: 🍵
+        - generic [ref=e66]:
+          - generic [ref=e67]: 经典美式
+          - generic [ref=e68]: 精选阿拉比卡豆，纯正美式风味
+          - generic [ref=e69]:
+            - generic [ref=e70]: ¥15.00
+            - button "去下单" [ref=e71]
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e74]: 🥤
+        - generic [ref=e75]:
+          - generic [ref=e76]: 芋泥波波奶茶
+          - generic [ref=e77]: 绵密芋泥+黑糖波波，冬日暖饮首选
+          - generic [ref=e78]:
+            - generic [ref=e79]: ¥18.00
+            - button "去下单" [ref=e80]
+      - generic [ref=e81] [cursor=pointer]:
+        - generic [ref=e83]: 🧊
+        - generic [ref=e84]:
+          - generic [ref=e85]: 红豆奶茶
+          - generic [ref=e86]: 软糯红豆搭配浓郁奶茶
+          - generic [ref=e87]:
+            - generic [ref=e88]: ¥15.00
+            - button "去下单" [ref=e89]
+      - generic [ref=e90] [cursor=pointer]:
+        - generic [ref=e92]: 🍋
+        - generic [ref=e93]:
+          - generic [ref=e94]: 珍珠奶茶
+          - generic [ref=e95]: 经典台式珍珠奶茶，Q弹有嚼劲
+          - generic [ref=e96]:
+            - generic [ref=e97]: ¥14.00
+            - button "去下单" [ref=e98]
+      - generic [ref=e99] [cursor=pointer]:
+        - generic [ref=e101]: 🫧
+        - generic [ref=e102]:
+          - generic [ref=e103]: 杨枝甘露
+          - generic [ref=e104]: 经典港式甜品，芒果椰奶西柚粒
+          - generic [ref=e105]:
+            - generic [ref=e106]: ¥20.00
+            - button "去下单" [ref=e107]
+      - generic [ref=e108] [cursor=pointer]:
+        - generic [ref=e110]: 🍑
+        - generic [ref=e111]:
+          - generic [ref=e112]: 葡萄冻冻
+          - generic [ref=e113]: 手剥葡萄果肉，Q弹果冻打底
+          - generic [ref=e114]:
+            - generic [ref=e115]: ¥19.00
+            - button "去下单" [ref=e116]
+      - generic [ref=e117] [cursor=pointer]:
+        - generic [ref=e119]: 🍇
+        - generic [ref=e120]:
+          - generic [ref=e121]: 霸气橙子
+          - generic [ref=e122]: 整颗鲜橙切片，满口维C果汁
+          - generic [ref=e123]:
+            - generic [ref=e124]: ¥18.00
+            - button "去下单" [ref=e125]
+      - generic [ref=e126] [cursor=pointer]:
+        - generic [ref=e128]: ☕
+        - generic [ref=e129]:
+          - generic [ref=e130]: 满杯百香果
+          - generic [ref=e131]: 新鲜百香果搭配茉莉绿茶，酸甜清爽
+          - generic [ref=e132]:
+            - generic [ref=e133]: ¥16.00
+            - button "去下单" [ref=e134]
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - heading "🎁 新用户首单立减 ¥5" [level=3] [ref=e137]
+        - paragraph [ref=e138]: 注册即可领取，全场饮品通用
+      - button "立即领取" [ref=e139] [cursor=pointer]

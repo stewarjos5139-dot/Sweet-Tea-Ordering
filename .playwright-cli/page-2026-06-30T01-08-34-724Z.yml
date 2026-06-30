@@ -1,0 +1,117 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 
+      - text: 全部商品
+    - link "" [ref=e7] [cursor=pointer]:
+      - /url: profile.html
+      - generic [ref=e8]: 
+  - generic [ref=e10]:
+    - generic [ref=e11]: 
+    - textbox "搜索饮品、小食…" [ref=e12]
+    - button "搜索" [ref=e13] [cursor=pointer]
+  - generic [ref=e14]:
+    - generic [ref=e15] [cursor=pointer]:
+      - img "抹茶蛋糕" [ref=e16]
+      - generic [ref=e17]:
+        - heading "抹茶蛋糕" [level=5] [ref=e18]
+        - paragraph [ref=e19]: 日式抹茶风味，清新不腻
+        - generic [ref=e20]:
+          - generic [ref=e21]: ¥14.00
+          - button "" [ref=e22]:
+            - generic [ref=e23]: 
+    - generic [ref=e24] [cursor=pointer]:
+      - img "提拉米苏" [ref=e25]
+      - generic [ref=e26]:
+        - heading "提拉米苏" [level=5] [ref=e27]
+        - paragraph [ref=e28]: 经典意式甜点，咖啡与奶酪的邂逅
+        - generic [ref=e29]:
+          - generic [ref=e30]: ¥15.00
+          - button "" [ref=e31]:
+            - generic [ref=e32]: 
+    - generic [ref=e33] [cursor=pointer]:
+      - img "薯条" [ref=e34]
+      - generic [ref=e35]:
+        - heading "薯条" [level=5] [ref=e36]
+        - paragraph [ref=e37]: 粗切薯条，外酥里糯
+        - generic [ref=e38]:
+          - generic [ref=e39]: ¥9.00
+          - button "" [ref=e40]:
+            - generic [ref=e41]: 
+    - generic [ref=e42] [cursor=pointer]:
+      - img "鸡米花" [ref=e43]
+      - generic [ref=e44]:
+        - heading "鸡米花" [level=5] [ref=e45]
+        - paragraph [ref=e46]: 金黄酥脆，一口一个停不下来
+        - generic [ref=e47]:
+          - generic [ref=e48]: ¥10.00
+          - button "" [ref=e49]:
+            - generic [ref=e50]: 
+    - generic [ref=e51] [cursor=pointer]:
+      - img "卡布奇诺" [ref=e52]
+      - generic [ref=e53]:
+        - heading "卡布奇诺" [level=5] [ref=e54]
+        - paragraph [ref=e55]: 奶泡绵密，经典意大利风味
+        - generic [ref=e56]:
+          - generic [ref=e57]: ¥17.00
+          - button "" [ref=e58]:
+            - generic [ref=e59]: 
+    - generic [ref=e60] [cursor=pointer]:
+      - img "生椰拿铁" [ref=e61]
+      - generic [ref=e62]:
+        - heading "生椰拿铁" [level=5] [ref=e63]
+        - paragraph [ref=e64]: 椰乳搭配浓缩咖啡，清爽提神
+        - generic [ref=e65]:
+          - generic [ref=e66]: ¥19.00
+          - button "" [ref=e67]:
+            - generic [ref=e68]: 
+    - generic [ref=e69] [cursor=pointer]:
+      - img "拿铁咖啡" [ref=e70]
+      - generic [ref=e71]:
+        - heading "拿铁咖啡" [level=5] [ref=e72]
+        - paragraph [ref=e73]: 意式浓缩+醇香牛奶，丝滑顺口
+        - generic [ref=e74]:
+          - generic [ref=e75]: ¥18.00
+          - button "" [ref=e76]:
+            - generic [ref=e77]: 
+    - generic [ref=e78] [cursor=pointer]:
+      - img "经典美式" [ref=e79]
+      - generic [ref=e80]:
+        - heading "经典美式" [level=5] [ref=e81]
+        - paragraph [ref=e82]: 精选阿拉比卡豆，纯正美式风味
+        - generic [ref=e83]:
+          - generic [ref=e84]: ¥15.00
+          - button "" [ref=e85]:
+            - generic [ref=e86]: 
+    - generic [ref=e87] [cursor=pointer]:
+      - img "焦糖奶茶" [ref=e88]
+      - generic [ref=e89]:
+        - heading "焦糖奶茶" [level=5] [ref=e90]
+        - paragraph [ref=e91]: 焦糖风味，甜而不腻
+        - generic [ref=e92]:
+          - generic [ref=e93]: ¥13.00
+          - button "" [ref=e94]:
+            - generic [ref=e95]: 
+    - generic [ref=e96] [cursor=pointer]:
+      - img "芋泥波波奶茶" [ref=e97]
+      - generic [ref=e98]:
+        - heading "芋泥波波奶茶" [level=5] [ref=e99]
+        - paragraph [ref=e100]: 绵密芋泥+黑糖波波，冬日暖饮首选
+        - generic [ref=e101]:
+          - generic [ref=e102]: ¥18.00
+          - button "" [ref=e103]:
+            - generic [ref=e104]: 
+  - generic [ref=e105]: 上拉加载更多…
+  - generic [ref=e106]:
+    - generic [ref=e107] [cursor=pointer]:
+      - generic [ref=e108]: 
+      - text: 首页
+    - generic [ref=e109] [cursor=pointer]:
+      - generic [ref=e110]: 
+      - text: 分类
+    - generic [ref=e111] [cursor=pointer]:
+      - generic [ref=e112]: 
+      - text: 全部
+    - generic [ref=e113] [cursor=pointer]:
+      - generic [ref=e114]: 
+      - text: 我的

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mysql --version)",
+      "Bash(mvn --version)",
+      "Bash(java -version)",
+      "Bash(mysql -u root -p123456 -e \"SELECT 1\")",
+      "Bash(mysql -u root -pZHB123456zhb -e \"SELECT 1\")",
+      "Bash(mysql -u root -pZHB123456zhb)",
+      "Bash(mysql -u root -pZHB123456zhb --default-character-set=utf8mb4)",
+      "Bash(mvn spring-boot:run -q)",
+      "Bash(mvn spring-boot:run)",
+      "Bash(curl -s http://localhost:8080/api/index/recommend)",
+      "Bash(mysql -u root -pZHB123456zhb --default-character-set=utf8mb4 -e \"SHOW DATABASES LIKE 'sweet_tea_db'; SELECT COUNT\\(*\\) AS table_count FROM sweet_tea_db.information_schema.tables WHERE table_schema='sweet_tea_db';\")",
+      "Bash(mysql -u root -pZHB123456zhb --default-character-set=utf8mb4 -e \"USE sweet_tea_db; SHOW TABLES;\")",
+      "Bash(mysql -u root -pZHB123456zhb --default-character-set=utf8mb4 -e \"SELECT user, host, plugin FROM mysql.user WHERE user='root';\")"
+    ]
+  }
+}
