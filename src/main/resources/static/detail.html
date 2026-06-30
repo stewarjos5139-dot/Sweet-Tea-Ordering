@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商品详情 - 甜趣奶茶</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 商品大图 */
+        .detail-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #FFB563, #FF8C5A);
+        }
+
+        /* 商品信息区 */
+        .detail-info {
+            padding: 20px 16px;
+            background: var(--white);
+            border-radius: 16px 16px 0 0;
+            margin-top: -16px;
+            position: relative;
+            z-index: 2;
+        }
+        .detail-info h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 6px;
+        }
+        .detail-info .detail-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .detail-info .detail-price {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .detail-info .detail-price::before {
+            content: '¥';
+            font-size: 18px;
+        }
+        .detail-info .detail-stock {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-left: 10px;
+        }
+
+        /* 规格选择区 */
+        .spec-section {
+            padding: 0 16px 16px;
+            background: var(--white);
+        }
+        .spec-section h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            color: var(--text-dark);
+        }
+        .spec-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .spec-option {
+            padding: 8px 18px;
+            border: 1.5px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--white);
+            color: var(--text-dark);
+            user-select: none;
+        }
+        .spec-option.active {
+            border-color: var(--primary);
+            background: #FFF5F0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .spec-option:hover {
+            border-color: var(--primary);
+        }
+
+        /* 数量选择器 */
+        .qty-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+        .qty-row .qty-label {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        .qty-control button {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--border);
+            background: var(--white);
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: all 0.15s;
+        }
+        .qty-control button:first-child {
+            border-radius: 20px 0 0 20px;
+        }
+        .qty-control button:last-child {
+            border-radius: 0 20px 20px 0;
+        }
+        .qty-control button:hover {
+            background: #FFF5F0;
+        }
+        .qty-control button:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        .qty-control .qty-num {
+            width: 44px;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+            font-size: 16px;
+            font-weight: 600;
+            border-top: 1.5px solid var(--border);
+            border-bottom: 1.5px solid var(--border);
+            background: var(--white);
+        }
+
+        /* 底部下单栏 */
+        .order-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+            z-index: 200;
+        }
+        .order-bar .total {
+            flex: 1;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .order-bar .total .amount {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .order-bar .total .amount::before {
+            content: '¥';
+            font-size: 15px;
+        }
+        .order-bar .btn-submit {
+            padding: 12px 36px;
+            border-radius: 24px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .order-bar .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+        .order-bar .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Toast 提示 */
+        .toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.78);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-size: 14px;
+            z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+
+    <!-- ========== 顶部导航 ========== -->
+    <div class="top-nav">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <a href="javascript:history.back()" style="color:var(--text-dark);font-size:18px;">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <span style="font-size:16px;font-weight:600;">商品详情</span>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html"><i class="fa fa-user-circle-o"></i></a>
+        </div>
+    </div>
+
+    <!-- ========== 商品大图 ========== -->
+    <img id="detailImg" class="detail-img" src="" alt="商品图片">
+
+    <!-- ========== 商品信息 ========== -->
+    <div class="detail-info">
+        <h2 id="detailName">---</h2>
+        <p class="detail-desc" id="detailDesc">---</p>
+        <span class="detail-price" id="detailPrice">0.00</span>
+        <span class="detail-stock" id="detailStock">库存：0</span>
+    </div>
+
+    <!-- ========== 规格选择 ========== -->
+    <div class="spec-section">
+        <!-- 甜度 -->
+        <h4><i class="fa fa-tint" style="color:var(--primary);"></i> 甜度</h4>
+        <div class="spec-options" id="sweetnessOptions">
+            <span class="spec-option active" data-val="全糖">全糖</span>
+            <span class="spec-option" data-val="半糖">半糖</span>
+            <span class="spec-option" data-val="无糖">无糖</span>
+        </div>
+
+        <!-- 冰量 -->
+        <h4><i class="fa fa-snowflake-o" style="color:#6BB5FF;"></i> 冰量</h4>
+        <div class="spec-options" id="iceOptions">
+            <span class="spec-option active" data-val="正常">正常</span>
+            <span class="spec-option" data-val="少冰">少冰</span>
+            <span class="spec-option" data-val="去冰">去冰</span>
+        </div>
+
+        <!-- 数量 -->
+        <div class="qty-row">
+            <span class="qty-label">数量</span>
+            <div class="qty-control">
+                <button id="btnMinus" disabled><i class="fa fa-minus"></i></button>
+                <span class="qty-num" id="qtyNum">1</span>
+                <button id="btnPlus"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 底部下单栏 ========== -->
+    <div style="height:70px;"></div> <!-- 占位 -->
+    <div class="order-bar">
+        <div class="total">
+            合计 <span class="amount" id="totalPrice">0.00</span>
+        </div>
+        <button class="btn-submit" id="btnSubmit" onclick="submitOrder()">
+            立即下单
+        </button>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+</div><!-- /.page-container -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="js/detail.js"></script>
+</body>
+</html>
